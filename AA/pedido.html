@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <link href="https://fonts.cdnfonts.com/css/suboleya" rel="stylesheet">
+        <link href="https://fonts.cdnfonts.com/css/bariol-bold" rel="stylesheet">
+<link rel="stylesheet" href="index.css">  
+<title>Pagina 1</title>       
+</head>
+<body>
+    <div style="margin: 24px;">
+        <nav class="navbar navbar-light" style="background-color: #E16613">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="menu.html">Menú</a>
+                    </li>
+                    <li class="active">
+                        <a class="navbar-brand" style="color:rgb(230, 227, 223)" href="pedido.html">Pedido</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>           
+    </div>
+    <h1 class="titulo1">Pedido</h1>  
+    <h1>Formulario</h1>
+
+    <form id="pedido">
+    <p margin-left: 100px;>Nombre: <input type="text" id="nombre" name="nombre" size="30"></p>
+    <p>Apellido: <input type="text" id="apellido" name="apellido" size="30"></p>
+    <p>Teléfono: <input type="text" id="telefono" name="telefono" size="20"></p>
+    <p>Dirección: <input type="text" id="direccion" name="direccion" size="30"></p>
+    <p>Colonia: <input type="text" id="colonia" name="colonia" size="30"></p>
+    <p>Servilletas?:
+        <morado><input type="radio" name="servilletas" id= "servilletas" value="Sí"> <rosa>Si</rosa></morado>
+        <input type="radio" name="servilletas" id= "servilletas" value="No"><morado>No</morado>   <br><br>
+    <hr>
+   <select name="menu" id="menu">
+    <optgroup label="Hamburguesa">
+        <option value="Hamburguesa clásica">Hamburguesa clásica</option>
+        <option value="Hamburguesa doble">Hamburguesa doble</option>
+        <option value="Hamburguesa de tocino">Hamburguesa de tocino</option>
+        <option value="Hamburguesa vegetariana">Hamburguesa vegetariana</option>
+    </optgroup>
+    <optgroup label="Tacos">
+    <option value="Tacos al pastor">Tacos al pastor</option>
+    <option value="Tacos de carnitas">Tacos de carnitas</option>
+    <option value="Tacos de barbacoa">Tacos de barbacoa</option>
+    <option value="Tacos de bistec">Tacos de bistec</option>
+    <option value="Tacos de canasta">Tacos de canasta</option>
+    </optgroup>
+    <optgroup label="Hot Dogs">
+        <option value="Hotdog básico">Hotdog básico</option>
+        <option value="Hotdog BBQ">Hotdog BBQ</option>
+        <option value="Hotdog con queso">Hotdog con queso</option>
+        <option value="Hotdog con tocino">Hotdog con tocino</option>
+    </optgroup>
+    <optgroup label="Lasaña">
+        <option value="Lasaña de pollo">Lasaña de pollo</option>
+        <option value="Lasaña de setas">Lasaña de setas</option>
+        <option value="Lasaña a la boloñesa">Lasaña a la boloñesa</option>
+        <option value="Lasaña a los 4 quesos">Lasaña a los 4 quesos</option>
+    </optgroup>
+    <optgroup label="Macarrones">
+    <option value="Macarrones con chorizo">Macarrones con chorizo</option>
+    <option value="Macarrones con queso">Macarrones con queso</option>
+    <option value="Macarrones con tomate">Macarrones con tomate</option>
+    <option value="Macarrones al pesto">Macarrones al pesto</option>
+
+   <optgroup label="Pollo asado">
+    <option value="Pollo asado con papas">Pollo asado con papas</option>
+    <option value="Pollo asado con salsa habanera">Pollo asado con salsa habanera</option>
+    <option value="Pollo asado con limón">Pollo asado con limón</option>
+</optgroup>
+<optgroup label="Sopas">
+    <option value="Sopa de fideos">Sopa de fideos</option>
+    <option value="Sopa de pollo">Sopa de pollo</option>
+    <option value="Sopa de albóndigas">Sopa de albóndigas</option>
+    <option value="Sopa de camarones">Sopa de camarones</option>
+</optgroup>
+<optgroup label="Ensalada">
+    <option value="Ensalada de pollo">Ensalda de pollo</option>
+    <option value="Ensalada de papas">Ensalada de papas</option>
+    <option value="Ensalada de arroz">Ensalada de arroz</option>
+    <option value="Ensalada mixta">Ensalada mixta</option>
+</optgroup>
+<optgroup label="Espagueti">
+    <option value="Espagueti rojo">Espagueti rojo</option>
+    <option value="Espagueti blanco">Espagueti blanco</option>
+    <option value="Espagueti a la boloñesa">Espagueti a la boloñesa</option>
+    <option value="Espagueti a la carbonara">Espagueti a la carbonara</option>
+</optgroup>
+<optgroup label="Tortas">
+    <option value="Torta de jamón">Torta de jamón</option>
+    <option value="Torta de Cochinita Pibil">Torta de Cochinita Pibil</option>
+    <option value="Torta ahogada">Torta ahogada</option>
+    <option value="Torta de huevo">Torta de huevo</option>
+    <option value="Torta de milanesa">Torta de milanesa</option>
+</optgroup>
+</select>
+   <titulo1 style="color:darkolivegreen" >Guarniciones:</titulo1>
+   <input type="checkbox" id="crema" unchecked><label form="crema">Crema</label>
+   <input type="checkbox" id="papas" unchecked><label form="papas">Puré de papa</label>
+   <input type="checkbox" id="salsa" unchecked><label form="salsa">Salsa</label>
+   <input type="checkbox" id="zanahorias" unchecked><label form="zanahorias">Bastones de zanahorias</label>
+
+</p>
+<input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+         </form>
+         <script>
+            const form=document.getElementById("pedido");
+            form.addEventListener("submit", function (event){
+            event.preventDefault();
+            const formData=new FormData(form);
+            const orden={
+                nombre:formData.get("nombre"),
+                apellido:formData.get("apellido"),
+                telefono:formData.get("telefono"),
+                direccion:formData.get("direccion"),
+                colonia:formData.get("colonia"),
+                menu:formData.get("menu"),
+                servilletas:formData.get("servilletas"),
+                crema:document.getElementById("crema").checked ? "Sí" : "No",
+                papas:document.getElementById("papas").checked ? "Sí" : "No",
+                salsa:document.getElementById("salsa").checked ? "Sí" : "No",
+                zanahorias:document.getElementById("zanahorias").checked ? "Sí" : "No",
+
+
+        };
+            localStorage.setItem("orden",JSON.stringify(orden));
+            window.location.href="pedidorealizado.html";
+            });
+         </script>
+    </body>
+</html>

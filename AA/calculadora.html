@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <title>Física</title>
+</head>
+<body>
+<nav class="navbar" style="background-color: #e6de9a;">
+    <!-- Navbar content -->
+  </nav>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Calculadora de Movimiento</h1>
+      <p class="lead">El movimiento es uno de los fenómenos físicos más evidentes, al ser fácilmente observable. Su estudio nos permite entender la circulación de objetos con los que a buen seguro estás familiarizado, como trenes, coches y aviones. Pero también nos sirve de base para el estudio de otros menos comunes, como satélites, planetas, estrellas y muchos más.
+La rama de la Física que se encarga del estudio de este fenómeno es la cinemática, que estudia las leyes del movimiento sin tener en cuenta las causas que lo han producido.</p>
+  <form id="formulario">
+    <label for="distancia">Distancia:</label>
+    <input type="text" id="distancia" name="distancia">
+    <select id="distanciaUnidad">
+      <option value="metros">metros</option>
+      <option value="pies">pies</option>
+    </select>
+    <br>
+    <label for="tiempo">Tiempo:</label>
+    <input type="text" id="tiempo" name="tiempo">
+    <select id="tiempoUnidad">
+      <option value="segundos">segundos</option>
+      <option value="horas">horas</option>
+    </select>
+    <br>
+    <label for="velocidadUnidad">Unidades de velocidad:</label>
+    <select id="velocidadUnidad">
+      <option value="metros_por_segundo">m/s</option>
+      <option value="pies_por_segundo">ft/s</option>
+      <option value="kilometros_por_hora">km/hr</option>
+      <option value="millas_por_hora">mph</option>
+    </select>
+    <br>
+    <br>
+    <button type="button" class="btn btn-success" value="Calcular" onclick="Calcular()">Calcular</button>
+  </form>
+  <br>
+  <p id="resultado"></p>
+  <p style="color: #d6bb42; background-color: #262e3a"> Velocidad: <span id="velocidad"></span></p>
+  <p style="color: #d6bb42; background-color: #262e3a"> Aceleración: <span id="aceleracion"></span></p>
+  <p style="color: #d6bb42; background-color: #262e3a"> Rapidez: <span id="rapidez"></span></p>
+  
+  <script>
+   
+   function Calcular(){
+      const distancia = parseFloat(document.getElementById('distancia').value);
+      const tiempo = parseFloat(document.getElementById('tiempo').value);
+  
+          const distanciaUnidad = document.getElementById('distanciaUnidad').value;
+          const tiempoUnidad = document.getElementById('tiempoUnidad').value;
+          const velocidadUnidad = document.getElementById('velocidadUnidad').value;
+  
+          //convertir unidades a Sistema Metrico Internacional (SI)
+          let distanciaSI = 0; 
+          let tiempoSI = 0;
+
+          if(distanciaUnidad === 'metros'){
+            distanciaSI = distancia;
+          } else if(distanciaUnidad === 'pies'){
+            distanciaSI = distancia /3.281;
+          }
+          if (tiempoUnidad === 'segundos') {
+            tiempoSI = tiempo;
+          } else if(tiempoUnidad === 'horas'){
+            tiempoSI = tiempo * 3600; 
+          }
+  
+          console.log("El valor de la distancia " +distancia);
+          console.log("El valor del tiempo " +tiempo);
+  
+          //Calcular velocidad, aceleración y rapidez
+          let velocidad = 0;
+          let aceleracion = 0;
+          let rapidez = 0;
+          
+          if(velocidadUnidad === 'metros_por_segundo'){
+            velocidad = distanciaSI / tiempoSI;
+            rapidez = velocidad;
+            aceleracion = velocidad / tiempoSI;
+          }
+          else if(velocidadUnidad === 'pies_por_segundo'){
+            velocidad = (distanciaSI * 3.281) / tiempoSI;
+            rapidez = velocidad;
+            aceleracion = velocidad / tiempoSI;
+          }
+          else if(velocidadUnidad === 'kilometros_por_hora'){
+            velocidad = (distanciaSI / 1000) / (tiempoSI / 3600);
+            rapidez = velocidad;
+            aceleracion = velocidad / (tiempoSI / 3600);
+          }
+          else if(velocidadUnidad === 'millas_por_hora'){
+            velocidad = (distanciaSI / 1609) / (tiempoSI / 3600);
+            rapidez = velocidad;
+            aceleracion = velocidad / (tiempoSI / 3600);
+          }
+
+          //mostrar resultados
+          let resultado = '';
+  
+          document.getElementById('velocidad').textContent = velocidad.toFixed(2) + ' ' + velocidadUnidad; 
+          document.getElementById('aceleracion').textContent = aceleracion.toFixed(2) + ' m/s²';
+          document.getElementById('rapidez').textContent = rapidez.toFixed(2) + ' ' + velocidadUnidad;
+          document.getElementById('resultado').innerHTML =resultado;
+        }
+     </script>
+    </div>
+  </body>
+  </html>
